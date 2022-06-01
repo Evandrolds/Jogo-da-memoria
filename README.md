@@ -1,2 +1,2 @@
-# Jogo-da-memoria
-Jogo da memória feito  com JAVASCRIP, HTML5 e CSS3
+# Jogo da memoria.
+Exercitar sua mente nunca foi tão divertido com esse Game.
