@@ -1,0 +1,186 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+body{
+    height: 100vh;
+    display: flex;
+    background-color: aliceblue;
+}
+/* MENU do Game*/
+
+.menu{
+    width: 50%;
+    height: 100%;
+    background-color: rgb(53, 59, 57);
+    border: 1px solid black;
+}
+.info{
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(30, 31, 30, 0.6);
+    margin: 7px;
+    padding: 7px;
+    border-radius: 8px;
+}
+.info h1{
+    color: rgb(219, 58, 18);
+    letter-spacing: 0.003vmin;
+    font-family: cursive;
+}
+.info h2{
+    letter-spacing: 0.00001rem;
+    display: flex;
+    font-family:  cursive;
+    margin-top: 7px;
+    color: rgb(204, 221, 205);
+}
+/*  Time do Game*/
+
+.time{
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    width: 145px;
+     justify-content: center;
+    font-family: cursive;
+    color: rgb(219, 58, 18);
+    
+    
+}
+/* Cronômetro */
+.funcoes{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-top: 5px;
+    
+}
+.funcoes h1{
+    margin-left: 15px;
+    margin-top: 5px;
+    color: rgb(248, 245, 242);
+}
+
+.button{
+    display: flex;
+    cursor: pointer;
+    width: 40px;
+    height: 25px;
+    font-family: fantasy;
+    border-radius: 7px;
+    align-items: center;
+    justify-content: center;
+    color: rgb(219, 58, 18);
+    background-color: rgba(0, 20, 30, 0.7);
+}
+#button{
+    display: flex;
+    cursor: pointer;
+    width: 40px;
+    height: 25px;
+    font-family: fantasy;
+    border-radius: 7px;
+    align-items: center;
+    justify-content: center;
+    color: rgb(219, 58, 18);
+    background-color: rgba(0, 20, 30, 0.7);
+}
+/* HOVER button */
+.button:hover{
+width: 45px;
+height: 30px;
+background-color: rgba(27, 58, 73, 0.7);
+}
+#button:hover{
+width: 45px;
+height: 30px;
+background-color: rgba(27, 58, 73, 0.7);
+}
+
+/* Placar / Points */
+.points{
+    display: flex;
+    margin-left: 7px;
+    width: 120px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3px;
+    
+}
+.points h2{
+    color: rgb(219, 58, 18);
+}
+.points .placar{
+    display: flex;
+    margin-left: 15px;
+   justify-content: center;
+   align-items: center;
+    color: rgb(252, 248, 248);
+}
+.numVezes{
+    display: flex;
+    justify-content: baseline;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 15px;
+    margin-left: 10px;
+    color: aliceblue;
+}
+.numVezes h2{
+    color: rgb(219, 58, 18);
+}
+/* Fundo do Game*/
+
+.fundo{
+display: flex;
+padding-top: 10px;
+align-items: center;
+justify-items: center;
+flex-wrap: wrap;
+padding-left: 35px;
+perspective: 1000px;
+background-color: rgb(53, 56, 56);
+
+}
+
+/* Card do Game*/
+
+.cards{
+    height: 130px;
+    width: 96.5px;
+    margin: 2.5px;
+    position: relative;
+    border: 1px solid black;
+    border-radius: 7px;
+    cursor:pointer;
+    transform: scale(0.95);
+    transform-style: preserve-3d;
+    transition: transform .9s;
+    
+}
+.cards:active{
+    transform: scale(0.98);
+    transition: tranform .3s;
+}
+.card-front,
+.card-back{
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    border-radius: 7px;
+    position: fixed;
+    background: rgb(53, 51, 51);
+    backface-visibility: hidden;
+}
+.card-front{
+    transform: rotateY(180deg);
+}
+/* Animação do cardflip*/
+.cards.flip{
+    transform: rotateY(180deg);
+}
