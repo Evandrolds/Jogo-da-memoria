@@ -1,0 +1,201 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  background-color:  rgb(53, 56, 56);
+}
+
+/* MENU do Game*/
+/* Container, fundo tela*/
+.container{
+  display: flex;
+  justify-content: space-evenly;
+  margin: 7px;
+}
+
+/* Caixa de informaçoes do jogo e buttons*/
+.info {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 300px;
+  justify-content: space-evenly;
+  height: auto;
+  background-color: rgb(19, 20, 20);
+  padding: 8px;
+  border: 1px solid black;
+  border-radius: 8px;
+}
+.exit{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  width: 200px;
+  height: 40px;
+  border: 1px solid rgb(226, 174, 5);
+  background-color: rgb(19, 15, 15);
+  cursor: pointer;
+  font-weight: 800;
+  margin: 10px;
+}
+.exit h4{
+  color:  aliceblue;
+  font-size: 15px;
+ border: none;
+}
+/* Hover do button Exit*/
+.info .exit h4:hover{
+  font-size:17px;
+  
+}
+.exit:hover{
+  background-color: rgba(226, 174, 5);
+}
+/* Nome do jogo*/
+.info h1 {
+   display: flex;
+   width: 300px;
+   justify-content: center;
+  font-size: 22px;
+  font-family: cursive;
+  border-radius: 7px;
+  color: rgb(219, 58, 18);
+  border: 1px solid rgb(226, 174, 5);
+  padding: 5px;
+}
+/*   Instruções do jogo  */
+.info h2 {
+  
+  font-size: 16px;
+  font-family: cursive;
+  color: rgb(204, 221, 205);
+  border: 1px solid rgb(226, 174, 5);
+  border-radius: 7px;
+  margin-top: 10px;
+  padding: 5px;
+}
+/* Caixa do info*/
+.caixa {
+  display: flex;
+  padding: 5px 10px;
+  max-width: 300px;
+  min-width: 300px;
+  justify-content: space-evenly;
+
+  flex-direction: column;
+  font-family: cursive;
+  margin-top: 10px;
+  border-radius: 10px;
+  border: 1px solid #ffd900;
+  background-color: rgba(1, 1, 1, 0.8);
+  padding-bottom: 10px;
+}
+
+/* Os botoes de pleys*/
+.fa-circle-play ,
+.fa-circle-stop , 
+.fa-circle-pause{
+  margin-right: 10px;
+  font-size: 30px;
+  cursor: pointer;
+  color: rgb(6, 154, 190);
+}
+ 
+
+/* Caixa de funçoes  do play*/
+.buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 20px;
+ 
+}
+/* Config Botoes Hover*/
+.fa-circle-play:hover,
+.fa-circle-pause:hover,
+.fa-circle-stop:hover {
+  font-size: 35px;
+  color: aliceblue;
+}
+
+/* Caixa do Time e contadores, */
+.container-times {
+  display: flex;
+  min-width: 250px;
+}
+/* caixa dos labels ( Time, Points e Tentativas ) */
+.labels {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  color: aliceblue;
+  
+}
+/* caixa dos Contadores ( Cronometro, Points e Vesez */
+.counters {
+  display: flex;
+  flex-direction: column;
+   color: rgb(219, 58, 18);
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 12px;
+}
+.fundo-cards {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 25px;
+  justify-content: space-evenly;
+  margin: 10px;
+  border-radius: 7px;
+  perspective: 1000px;
+  background-color: rgb(36, 37, 37);
+  border: 1px solid black;
+}
+
+/* Card do Game*/
+.cards {
+  width: 60px;
+  height: 80px;
+  margin-right: 5px;
+  position: relative;
+  border: 1px solid black;
+  border-radius: 7px;
+  cursor: pointer;
+  transform: scale(0.95);
+  transform-style: preserve-3d;
+  transition: transform 0.9s;
+}
+.cards:active {
+  transform: scale(0.98);
+  transition: tranform 0.3s;
+}
+.card-front,
+.card-back {
+  width: 100%;
+  height: 100%;
+  border-radius: 7px;
+  position: fixed;
+  background: rgb(12, 12, 12);
+  backface-visibility: hidden;
+}
+/* Animação do cardflip*/
+.card-front, .cards.flip{
+  transform: rotateY(180deg);
+}
+
+@media (max-width: 400px) {
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    max-width: auto;
+    max-height: auto;
+    padding: 7px;
+  }
+}

@@ -1,0 +1,118 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    margin: 0;
+    padding: 0;
+    background-color:#1f2635;
+    font-family: cursive;
+}
+
+.Container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 10px;
+    font-size: 12px;
+    background-color: rgb(15, 15, 15);
+    border-radius: 10px;
+    
+}
+.Container a{
+    margin: 20px;
+    max-width: 150px;
+    text-decoration: none;
+    font-size: 18px;
+    color: rgb(6, 154, 190);
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 5px;
+    
+}
+.Container a:hover{
+    font-size: 20px;
+    color: #030303;
+    background-color: #ffd900;
+}
+.menu h2{
+    display: flex;
+    border: 1px solid #ffd900;
+    justify-content: center;
+    background-color:rgb(15, 15, 15);
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    color: #f1f3f7;
+    border-radius: 10px;
+}
+.conteudo{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    border: 1px solid  #ffd900;;
+    color: #ffd900;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 20px;
+}
+.titulo1{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ffd900;
+    max-width: 200px;
+    max-height: 200px;
+    border-radius: 10px;
+}
+.titulo1 h4,
+.conteudo h4,
+.texto2 h4,
+.texto3 h4,
+.texto4 h4,
+.texto5 h4,
+.texto6 h4{
+    display: flex;
+    border: 1px solid #ffd900;
+    padding: 7px;
+    color: #9ba8b6;
+    margin: 7px;
+    max-width: 400px;
+    
+    background-color: #1f2635;
+    border-radius: 10px;
+
+}
+
+.titulo1 img,
+.texto1 img,
+.texto2 img,
+.texto3 img,
+.texto4 img,
+.texto5 img,
+.texto6 img,
+.texto7 img{
+    border:1px solid #ffd900;
+    max-width: 150px;
+    max-height: 150px;
+    margin: 10px;
+    background-size: cover;
+    border-radius: 10px;
+}
+.rodape{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #1f2635;
+    margin: 10px;
+    border-radius: 10px;
+    height: 50px;
+}
+.rodape h2, h3{
+    color: #ffd900;
+    font-size: 14px;
+}
+
+

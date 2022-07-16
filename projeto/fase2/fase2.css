@@ -1,0 +1,275 @@
+* {
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  height: 100vh;
+  padding: auto;
+  background-color: rgb(30, 32, 32);
+}
+/* Container */
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 7px;
+}
+/* Instruction box */
+.box {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+  max-width: auto;
+  max-height: auto;
+  height: 545px;
+  font-family: cursive;
+  border-radius: 10px;
+  border: 1px solid rgb(99, 96, 96);
+  background-color: rgb(12, 12, 12);
+}
+/*  box info*/
+.info {
+  display: flex;
+  max-width: auto;
+  max-height: auto;
+  flex-direction: column;
+  padding: 7px;
+  border: 1px solid rgb(71, 69, 69);
+  border-radius: 8px;
+  background-color: rgb(0, 0, 0);
+}
+/*  Button Exit*/
+.info .exit{
+  text-decoration: none;
+  display: flex;
+  max-width: 250px;
+  border-radius: 15px;
+  justify-content: center;
+  margin: 7px;
+  padding: 7px;
+  border-color:rgb(226, 174, 5);
+  background-color: rgb(19, 15, 15);
+  cursor: pointer;
+  font-weight: 800;
+}
+.exit h2{
+  color:  aliceblue;
+  font-size: 15px;
+  font-family: cursive;
+ 
+}
+.exit:hover{
+  background-color:rgb(226, 174, 5) ;
+}
+/* Hover do button Exit*/
+.info .exit h2:hover{
+  font-size:17px;
+}
+.info p{
+  color: rgb(245, 189, 4);
+  font-size: 12px;
+}
+
+/*    Menu Hello  */
+.hello {
+  font-size: 1rem;
+  font-family: cursive;
+  border-radius: 7px;
+  padding: 5px;
+  color: rgb(38, 150, 4);
+  border: 1px solid rgb(90, 88, 86);
+  background-color: rgba(0, 0, 0, 0.795);
+}
+
+/*   Menu Info    */
+.instructions {
+  font-family: cursive;
+  border-radius: 7px;
+  align-items: center;
+  padding: 7px;
+  margin: 7px 0;
+  font-size: 1em;
+  font-family: cursive;
+  color: rgb(204, 42, 2);
+  border: 1px solid rgb(90, 88, 86);
+  background-color: rgba(3, 3, 3, 0.986);
+}
+/*      Config Buttons       */
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  width: 40px;
+  height: 170px;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 15px;
+  border-radius: 20px;
+  border: 1px solid rgb(255, 253, 253);
+  background-color: rgb(0, 0, 0);
+}
+/*       Iconis dos botoes    */
+.fa-circle-play,
+.fa-circle-stop,
+.fa-circle-pause {
+  font-size: 27px;
+  cursor: pointer;
+  color: aliceblue;/*rgb(204, 42, 2);*/
+}
+/*       botoes Hover       */
+.fa-circle-play:hover,
+.fa-circle-pause:hover,
+.fa-circle-stop:hover {
+  font-size: 30px;
+  color: rgb(204, 42, 2);
+}
+
+/*  Caixa de interação, Tempo,Tentativas, Pontos e Jogador,
+cronometro,pontos, tentativas */
+.box-labels {
+  display: flex;
+  max-width: auto;
+  margin-top: 10px;
+  padding: 5px;
+  border-radius: 7px;
+}
+/* labels (Tempo, Tentativas, Pontos e Jogador */
+.labels {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+}
+/*    Label Player */
+.jogador {
+  font-size: 1.2em;
+  margin-left: 1px;
+  margin-top: 10px;
+  font-family: cursive;
+  color: aliceblue;
+}
+/*  Label Time */
+.tempo {
+  font-size: 1.2em;
+  margin-left: 1px;
+  font-family: cursive;
+  color: aliceblue;
+}
+/*    Label Pontos */
+.pontos {
+  margin-left: 1px;
+  font-size: 1.2em;
+  font-family: cursive;
+  color: aliceblue;
+}
+/*    Label Trying */
+.tentativa {
+  font-size: 1.2em;
+  margin-left: 1px;
+  font-family: cursive;
+  color: aliceblue;
+  margin-bottom: 10px;
+}
+
+/* Caixa de marcadores, (Cronometro, Pontos, Tentativas*/
+.box-timer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+#name {
+  margin-left: 2px;
+  color: rgb(7, 114, 207);
+  font-size: 1.2em;
+  margin-top: 10px;
+}
+#time {
+  font-size: 1.4em;
+  color: rgb(182, 31, 4);
+  margin-left: 10px;
+  margin-top: 5px;
+}
+#punctuation {
+  color: rgb(182, 31, 4);
+  font-size: 1.4em;
+  margin-left: 20px;
+  margin-bottom: 5px;
+}
+#trying {
+  color: rgb(182, 31, 4);
+  font-size: 1.4em;
+  width: 25px;
+  margin-left: 20px;
+  margin-bottom: 3px;
+}
+
+/* Fundo dos cards  */
+.background {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  perspective: 1000px;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 16px;
+  justify-content: space-evenly;
+  background-color: rgb(11, 12, 12);
+}
+/* Cards do Game*/
+.card {
+  width: 60px;
+  height: 80px;
+  margin: 2.5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform 0.9s;
+  background-color: rgba(14, 13, 13, 0.5);
+}
+.card:active {
+  transform: scale(0.99);
+  transition: transform 0.2s;
+}
+/* Frente e verso dos Cards*/
+.card-front,
+.card-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  position: fixed;
+  border-radius: 10px;
+  background: rgb(35, 37, 37);
+  backface-visibility: hidden;
+}
+.card-front {
+  transform: rotateY(180deg);
+}
+.card.flip {
+  transform: rotateY(180deg);
+}
+
+@media (max-width: 379px) {
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    max-width: auto;
+    max-height: auto;
+    padding: 7px;
+    
+  };
+  .info{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .exit{
+  display: flex;
+    flex-direction:column-reverse;
+  }
+}

@@ -2,10 +2,12 @@ const cards = document.querySelectorAll(".cards");
 let hasFlippedCard = false;
 var firstCard, secondCard;
 let blockBoard = false;
-// Vira as cartas
-function flipCards() {
-  //this.classList.toggle('flip'); // adiciona e tira a classe
 
+// Vira as cartas
+
+function flipCards() {
+  getInformations();
+  //this.classList.toggle('flip'); // adiciona e tira a classe
   // função que vira as cartas após o click
   if (blockBoard) {
     return;
@@ -24,16 +26,32 @@ function flipCards() {
   hasFlippedCard = false;
   checkForMatch();
 }
+var nome = "";
+function getInformations() {
+  if(!crom){
+    alert("Antes de começar o jogo é peciso adicionar seu nome!");
+     nome = prompt("Digite o seu nome para começar o jogo;", " Nome");
+   if(nome == null || nome == false){
+    unFlipCard();
+    disableCards();
+   }
+    document.getElementById("name").innerText = nome;
+    return play();
+  }
+  
+}
+
 // Contatador de Tentativas
 var count = 0;
 function numeroTentativas() {
   if (!unFlipCard()) {
     count++;
-    document.getElementById("vezes").innerText = count;
+    document.getElementById("count").innerText = count;
   } else {
     unFlipCard();
   }
 }
+
 //desvira as carta
 function unFlipCard() {
   // função que vira as cartas se não forem iguais
@@ -45,14 +63,13 @@ function unFlipCard() {
   }, 1000);
   blockBoard = false;
 }
-// pega o envendo do click
-function clickFlip(){
+
+// pega o envendo do click para mostrar a carta
+function clickFlip() {
   resetBoard();
-      cards.forEach((card) => {
-        card.addEventListener("click", flipCards);
-        
-     });
-  
+  cards.forEach((card) => {
+    card.addEventListener("click", flipCards);
+  });
 }
 clickFlip();
 
@@ -63,19 +80,36 @@ function checkForMatch() {
   //contar tentaivas
   numeroTentativas();
   if (firstCard.dataset.cards === secondCard.dataset.cards) {
-    total += 1;
+    total++;
+    document.getElementById("punctuation").innerText = total;
     // Se virar todas as cartas
-    if (total == 22) {
-      alert(
-        "Parabens, você concluiu a fase do jogo! Total de pontos: " + total
-      );
+    if (total == 1) {
+      pause();
+      
+      congratulations(total);
       return;
     }
-    document.getElementById("count").innerText = total;
+
+    document.getElementById("punctuation").innerText = total;
 
     return disableCards();
   } else {
     unFlipCard();
+  }
+}
+function congratulations(total){
+  alert(
+    " Total de PONTOS: " + total);
+    alert("Parabens, você concluiu a primera fase do GAME !");
+    let N = confirm("Você gostaria de começar o segunda fase do Game?");
+    if(N !== null && total >= 1){
+      nextFase( total);
+    }
+}
+// Função que chama a próxima fase 
+function nextFase(total) {
+  if (total >= 1) {
+    window.location.assign("../fase2/fase2.html");
   }
 }
 // desabilita as cartas
@@ -84,6 +118,7 @@ function disableCards() {
   secondCard.removeEventListener("click", flipCards);
   resetBoard();
 }
+
 // reseta as variáveis
 function resetBoard() {
   [hasFlippedCard, blockBoard] = [false, false];
@@ -105,23 +140,33 @@ var mm = 0;
 var ss = 0;
 var tempo = 1000; // quanto miléssimos vale um minuto
 var crom;
-function start() {
+function play() {
+  
   crom = setInterval(() => timer(), tempo);
+
 }
+
+// Pause do jogo
 function pause() {
   clearInterval(crom);
 }
-function sttop() {
+
+//Stop do jogo
+function stopp() {
   clearInterval(crom);
   hh = 0;
   mm = 0;
   ss = 0;
+  document.getElementById("punctuation").innerText = "0";
   document.getElementById("count").innerText = "0";
-  document.getElementById("vezes").innerText = "0";
   document.getElementById("crono").innerText = "00:00:00";
-  
-   
+  if(crom == 0){
+    unFlipCard();
+    disableCards();
+    
+  }
 }
+// Timer do jogo
 function timer() {
   ss++;
   if (ss == 60) {
@@ -142,3 +187,11 @@ function timer() {
 
   document.getElementById("crono").innerText = format;
 }
+document.getElementsById(".exit").onClick = exit();
+  function exit(){
+    let N = confirm("Deseja Sair da página?");
+    if(N){ 
+     return window.close();
+    }
+    return;
+  }

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./fase2.css" />
+    
+    <title>Jogo da Memória lavel 2</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box">
+        <div class="info">
+   
+          <button class="exit" onclick="exit()">
+          <h2>Sair do Game</h2></a>
+          </button>
+
+          <h1 class="hello">
+            Hello! Welcome to secund fase the game ("Memorie of Game") !!!
+          </h1>
+          <h2 class="instructions">
+            Bem, a regra do jogo mudou um pouco. Você terá que virar 3 cartas
+            iguais para conseguir fazer pontos. Boa sorte, e vamos pro jogo!
+          </h2>
+          <p>Created by Evandro</p>
+        </div>
+        <div class="buttons">
+          <i class="fa-regular fa-circle-play" onclick="start()"></i>
+          <i class="fa-regular fa-circle-pause" onclick="pause()"></i>
+          <i class="fa-regular fa-circle-stop" onclick="stopp()"></i>
+        </div>
+        <div class="box-labels">
+          <div class="labels">
+            <label class="jogador">Player:</label>
+            <label class="tempo">Time:</label>
+            <label class="pontos">Points:</label>
+            <label class="tentativa">Trying:</label>
+          </div>
+          <div class="box-timer">
+            <div id="name">Jogador</div>
+            <h2 id="time">00:00:00</h2>
+            <h2 id="punctuation">0</h2>
+            <h2 id="trying">0</h2>
+          </div>
+        </div>
+      </div>
+      <main class="background">
+        <div class="card" data-card="panda-vermelho">
+          <img src="./imgs/panda-vermelho.png" alt="front" class="card-front" />
+          <img src="./imgs/fundo.png" alt="back" class="card-back" />
+        </div>
+        <div class="card" data-card="panda-vermelho">
+          <img src="./imgs/panda-vermelho.png" alt="front" class="card-front" />
+          <img src="./imgs/fundo.png" alt="back" class="card-back" />
+        </div>
+        <div class="card" data-card="panda-rosa">
+          <img src="./imgs/panda-rosa.png" alt="front" class="card-front" />
+          <img src="./imgs/fundo.png" alt="back" class="card-back" />
+        </div>
+        <div class="card" data-card="panda-rosa">
+          <img src="./imgs/panda-rosa.png" alt="front" class="card-front" />
+          <img src="./imgs/fundo.png" alt="back" class="card-back" />
+        </div>
+        <div class="card" data-card="cobra4">
+          <img src="./imgs/cobra4.jpg" alt="front" class="card-front" />
+          <img src="./imgs/fundo.png" alt="back" class="card-back" />
+        </div>
+        <div class="card" data-card="cobra4">
+          <img src="./imgs/cobra4.jpg" alt="front" class="card-front" />
+          <img src="./imgs/fundo.png" alt="back" class="card-back" />
+        </div>
+        <div class="card" data-card="cao2">
+          <img src="./imgs/cao2.png" alt="front" class="card-front" />
+          <img src="./imgs/fundo.png" alt="back" class="card-back" />
+        </div>
+        <div class="card" data-card="vaca">
+          <img src="./imgs/vaca.png" alt="front" class="card-front" />
+          <img src="./imgs/fundo.png" alt="back" class="card-back" />
+        </div>
+        <div class="card" data-card="cao4">
+          <img src="./imgs/cao4.png" alt="front" class="card-front" />
+          <img src="./imgs/fundo.png" alt="back" class="card-back" />
+        </div>
+        <div class="card" data-card="cao3">
+          <img src="./imgs/cao3.png" alt="front" class="card-front" />
+          <img src="./imgs/fundo.png" alt="back" class="card-back" />
+        </div>
+        <div class="card" data-card="caracol">
+          <img src="./imgs/caracol.png" alt="front" class="card-front" />
+          <img src="./imgs/fundo.png" alt="back" class="card-back" />
+        </div>
+        <div class="card" data-card="dalmataAzul">
+          <img
+            src="./imgs/caoManchasgaAzul.gif"
+            alt="front"
+            class="card-front"
+          />
+          <img src="./imgs/fundo.png" alt="back" class="card-back" />
+        </div>
+        <div class="card" data-card="cavalo2">
+          <img src="./imgs/cavalo2.png" alt="front" class="card-front" />
+          <img src="./imgs/fundo.png" alt="back" class="card-back" />
+        </div>
+        <div class="card" data-card="cavalo">
+          <img src="./imgs/cavalo.png" alt="front" class="card-front" />
+          <img src="./imgs/fundo.png" alt="back" class="card-back" />
+        </div>
+        <div class="card" data-card="cobra">
+          <img src="./imgs/cobra.png" alt="front" class="card-front" />
+          <img src="./imgs/fundo.png" alt="back" class="card-back" />
+        </div>
+        <div class="card" data-card="dino">
+          <img src="./imgs/dino.png" alt="front" class="card-front" />
+          <img src="./imgs/fundo.png" alt="back" class="card-back" />
+        </div>
+        <div class="card" data-card="coelho">
+          <img src="./imgs/coelho.png" alt="front" class="card-front" />
+          <img src="./imgs/fundo.png" alt="back" class="card-back" />
+        </div>
+        <div class="card" data-card="gato">
+          <img src="./imgs/gato.png" alt="front" class="card-front" />
+          <img src="./imgs/fundo.png" alt="back" class="card-back" />
+        </div>
+        <div class="card" data-card="gatinha">
+          <img src="./imgs/gatinha.png" alt="front" class="card-front" />
+          <img src="./imgs/fundo.png" alt="back" class="card-back" />
+        </div>
+        <div class="card" data-card="grilo">
+          <img src="./imgs/grilo.png" alt="front" class="card-front" />
+          <img src="./imgs/fundo.png" alt="back" class="card-back" />
+        </div>
+        <div class="card" data-card="macaco">
+          <img src="./imgs/macaco.png" alt="front" class="card-front" />
+          <img src="./imgs/fundo.png" alt="back" class="card-back" />
+        </div>
+        <div class="card" data-card="leopardo">
+          <img src="./imgs/leopardo.png" alt="front" class="card-front" />
+          <img src="./imgs/fundo.png" alt="back" class="card-back" />
+        </div>
+        <div class="card" data-card="macaco2">
+          <img src="./imgs/macaco2.png" alt="front" class="card-front" />
+          <img src="./imgs/fundo.png" alt="back" class="card-back" />
+        </div>
+        <div class="card" data-card="papagaio">
+          <img src="./imgs/papagaio.png" alt="front" class="card-front" />
+          <img src="./imgs/fundo.png" alt="back" class="card-back" />
+        </div>
+        <div class="card" data-card="panda">
+          <img src="./imgs/panda.png" alt="front" class="card-front" />
+          <img src="./imgs/fundo.png" alt="back" class="card-back" />
+        </div>
+        <div class="card" data-card="passaro">
+          <img src="./imgs/passaro.png" alt="front" class="card-front" />
+          <img src="./imgs/fundo.png" alt="back" class="card-back" />
+        </div>
+        <div class="card" data-card="unicornio">
+          <img src="./imgs/unicornio.png" alt="front" class="card-front" />
+          <img src="./imgs/fundo.png" alt="back" class="card-back" />
+        </div>
+
+        <div class="card" data-card="pelicano">
+          <img src="./imgs/pelicano.png" alt="front" class="card-front" />
+          <img src="./imgs/fundo.png" alt="back" class="card-back" />
+        </div>
+        <div class="card" data-card="pelicano">
+          <img src="./imgs/pelicano.png" alt="front" class="card-front" />
+          <img src="./imgs/fundo.png" alt="back" class="card-back" />
+        </div>
+
+        <div class="card" data-card="vaca">
+          <img src="./imgs/vaca.png" alt="front" class="card-front" />
+          <img src="./imgs/fundo.png" alt="back" class="card-back" />
+        </div>
+        <div class="card" data-card="leopardo2">
+          <img src="./imgs/leopardo2.jpg" alt="front" class="card-front" />
+          <img src="./imgs/fundo.png" alt="back" class="card-back" />
+        </div>
+
+        <div class="card" data-card="girafa">
+          <img src="./imgs/girafa.jpg" alt="front" class="card-front" />
+          <img src="./imgs/fundo.png" alt="back" class="card-back" />
+        </div>
+
+        <div class="card" data-card="bebeLeopardo">
+          <img src="./imgs/bebeLeopardo.jpg" alt="front" class="card-front" />
+          <img src="./imgs/fundo.png" alt="back" class="card-back" />
+        </div>
+
+        <div class="card" data-card="cobra3">
+          <img src="./imgs/cobra3.png" alt="front" class="card-front" />
+          <img src="./imgs/fundo.png" alt="back" class="card-back" />
+        </div>
+
+        <div class="card" data-card="girafa2">
+          <img src="./imgs/girafa2.png" alt="front" class="card-front" />
+          <img src="./imgs/fundo.png" alt="back" class="card-back" />
+        </div>
+        <div class="card" data-card="girafa2">
+          <img src="./imgs/girafa2.png" alt="front" class="card-front" />
+          <img src="./imgs/fundo.png" alt="back" class="card-back" />
+        </div>
+
+        <div class="card" data-card="leao">
+          <img src="./imgs/leao.png" alt="front" class="card-front" />
+          <img src="./imgs/fundo.png" alt="back" class="card-back" />
+        </div>
+        <div class="card" data-card="leao">
+          <img src="./imgs/leao.png" alt="front" class="card-front" />
+          <img src="./imgs/fundo.png" alt="back" class="card-back" />
+        </div>
+
+        <div class="card" data-card="girafa">
+          <img src="./imgs/girafa.jpg" alt="front" class="card-front" />
+          <img src="./imgs/fundo.png" alt="back" class="card-back" />
+        </div>
+
+        <div class="card" data-card="cobra3">
+          <img src="./imgs/cobra3.png" alt="front" class="card-front" />
+          <img src="./imgs/fundo.png" alt="back" class="card-back" />
+        </div>
+
+        <div class="card" data-card="cobra2">
+          <img src="./imgs/cobra2.jpg" alt="front" class="card-front" />
+          <img src="./imgs/fundo.png" alt="back" class="card-back" />
+        </div>
+        <div class="card" data-card="cobra2">
+          <img src="./imgs/cobra2.jpg" alt="front" class="card-front" />
+          <img src="./imgs/fundo.png" alt="back" class="card-back" />
+        </div>
+
+        <div class="card" data-card="leopardo">
+          <img src="./imgs/leopardo.png" alt="front" class="card-front" />
+          <img src="./imgs/fundo.png" alt="back" class="card-back" />
+        </div>
+
+        <div class="card" data-card="leoa2">
+          <img src="./imgs/leoa2.jpg" alt="front" class="card-front" />
+          <img src="./imgs/fundo.png" alt="back" class="card-back" />
+        </div>
+        <div class="card" data-card="leoa2">
+          <img src="./imgs/leoa2.jpg" alt="front" class="card-front" />
+          <img src="./imgs/fundo.png" alt="back" class="card-back" />
+        </div>
+
+        <div class="card" data-card="macaco3">
+          <img src="./imgs/macaco3.jpg" alt="front" class="card-front" />
+          <img src="./imgs/fundo.png" alt="back" class="card-back" />
+        </div>
+        <div class="card" data-card="macaco3">
+          <img src="./imgs/macaco3.jpg" alt="front" class="card-front" />
+          <img src="./imgs/fundo.png" alt="back" class="card-back" />
+        </div>
+        <div class="card" data-card="tigre">
+          <img src="./imgs/tigre.jpg" alt="front" class="card-front" />
+          <img src="./imgs/fundo.png" alt="back" class="card-back" />
+        </div>
+        <div class="card" data-card="tigre">
+          <img src="./imgs/tigre.jpg" alt="front" class="card-front" />
+          <img src="./imgs/fundo.png" alt="back" class="card-back" />
+        </div>
+        <div class="card" data-card="tigre2">
+          <img src="./imgs/tigre2.png" alt="front" class="card-front" />
+          <img src="./imgs/fundo.png" alt="back" class="card-back" />
+        </div>
+        <div class="card" data-card="tigre2">
+          <img src="./imgs/tigre2.png" alt="front" class="card-front" />
+          <img src="./imgs/fundo.png" alt="back" class="card-back" />
+        </div>
+        <div class="card" data-card="bebeLeopardo">
+          <img src="./imgs/bebeLeopardo.jpg" alt="front" class="card-front" />
+          <img src="./imgs/fundo.png" alt="back" class="card-back" />
+        </div>
+        <div class="card" data-card="cao2">
+          <img src="./imgs/cao2.png" alt="front" class="card-front" />
+          <img src="./imgs/fundo.png" alt="back" class="card-back" />
+        </div>
+
+        <div class="card" data-card="cao4">
+          <img src="./imgs/cao4.png" alt="front" class="card-front" />
+          <img src="./imgs/fundo.png" alt="back" class="card-back" />
+        </div>
+
+        <div class="card" data-card="caracol">
+          <img src="./imgs/caracol.png" alt="front" class="card-front" />
+          <img src="./imgs/fundo.png" alt="back" class="card-back" />
+        </div>
+
+        <div class="card" data-card="dalmataAzul">
+          <img
+            src="./imgs/caoManchasgaAzul.gif"
+            alt="front"
+            class="card-front"
+          />
+          <img src="./imgs/fundo.png" alt="back" class="card-back" />
+        </div>
+
+        <div class="card" data-card="cavalo">
+          <img src="./imgs/cavalo.png" alt="front" class="card-front" />
+          <img src="./imgs/fundo.png" alt="back" class="card-back" />
+        </div>
+
+        <div class="card" data-card="cavalo2">
+          <img src="./imgs/cavalo2.png" alt="front" class="card-front" />
+          <img src="./imgs/fundo.png" alt="back" class="card-back" />
+        </div>
+
+        <div class="card" data-card="gatinha">
+          <img src="./imgs/gatinha.png" alt="front" class="card-front" />
+          <img src="./imgs/fundo.png" alt="back" class="card-back" />
+        </div>
+
+        <div class="card" data-card="cobra">
+          <img src="./imgs/cobra.png" alt="front" class="card-front" />
+          <img src="./imgs/fundo.png" alt="back" class="card-back" />
+        </div>
+        <div class="card" data-card="cao3">
+          <img src="./imgs/cao3.png" alt="front" class="card-front" />
+          <img src="./imgs/fundo.png" alt="back" class="card-back" />
+        </div>
+
+        <div class="card" data-card="dino">
+          <img src="./imgs/dino.png" alt="front" class="card-front" />
+          <img src="./imgs/fundo.png" alt="back" class="card-back" />
+        </div>
+        <div class="card" data-card="leopardo2">
+          <img src="./imgs/leopardo2.jpg" alt="front" class="card-front" />
+          <img src="./imgs/fundo.png" alt="back" class="card-back" />
+        </div>
+
+        <div class="card" data-card="coelho">
+          <img src="./imgs/coelho.png" alt="front" class="card-front" />
+          <img src="./imgs/fundo.png" alt="back" class="card-back" />
+        </div>
+
+        <div class="card" data-card="gato">
+          <img src="./imgs/gato.png" alt="front" class="card-front" />
+          <img src="./imgs/fundo.png" alt="back" class="card-back" />
+        </div>
+        <div class="card" data-card="grilo">
+          <img src="./imgs/grilo.png" alt="front" class="card-front" />
+          <img src="./imgs/fundo.png" alt="back" class="card-back" />
+        </div>
+
+        <div class="card" data-card="macaco2">
+          <img src="./imgs/macaco2.png" alt="front" class="card-front" />
+          <img src="./imgs/fundo.png" alt="back" class="card-back" />
+        </div>
+
+        <div class="card" data-card="macaco">
+          <img src="./imgs/macaco.png" alt="front" class="card-front" />
+          <img src="./imgs/fundo.png" alt="back" class="card-back" />
+        </div>
+
+        <div class="card" data-card="papagaio">
+          <img src="./imgs/papagaio.png" alt="front" class="card-front" />
+          <img src="./imgs/fundo.png" alt="back" class="card-back" />
+        </div>
+
+        <div class="card" data-card="panda">
+          <img src="./imgs/panda.png" alt="front" class="card-front" />
+          <img src="./imgs/fundo.png" alt="back" class="card-back" />
+        </div>
+
+        <div class="card" data-card="unicornio">
+          <img src="./imgs/unicornio.png" alt="front" class="card-front" />
+          <img src="./imgs/fundo.png" alt="back" class="card-back" />
+        </div>
+        <div class="card" data-card="passaro">
+          <img src="./imgs/passaro.png" alt="front" class="card-front" />
+          <img src="./imgs/fundo.png" alt="back" class="card-back" />
+        </div>
+      </main>
+    </div>
+
+    <script src="./fase2.js"></script>
+    <!--  Font Awesome foi utilizado para os icones PLAY,PAUSE e STOP  do Game   -->
+    <script
+      src="https://kit.fontawesome.com/897cab8670.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
