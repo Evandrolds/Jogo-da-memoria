@@ -13,16 +13,13 @@ body {
 .container {
   display: flex;
   justify-content: space-evenly;
-  margin: 7px;
+  margin: 10px;
 }
 /* Instruction box */
 .box {
   display: flex;
   flex-wrap: wrap;
   padding: 10px;
-  max-width: auto;
-  max-height: auto;
-  height: 545px;
   font-family: cursive;
   border-radius: 10px;
   border: 1px solid rgb(99, 96, 96);
@@ -77,6 +74,7 @@ body {
   font-family: cursive;
   border-radius: 7px;
   padding: 5px;
+  margin-top: 10px;
   color: rgb(38, 150, 4);
   border: 1px solid rgb(90, 88, 86);
   background-color: rgba(0, 0, 0, 0.795);
@@ -84,11 +82,12 @@ body {
 
 /*   Menu Info    */
 .instructions {
+  display: flex;
   font-family: cursive;
   border-radius: 7px;
   align-items: center;
-  padding: 7px;
-  margin: 7px 0;
+  padding: 10px;
+  margin: 10px 0;
   font-size: 1em;
   font-family: cursive;
   color: rgb(204, 42, 2);
@@ -100,7 +99,6 @@ body {
   display: flex;
   flex-wrap: wrap;
   width: 40px;
-  height: 170px;
   align-items: center;
   justify-content: space-evenly;
   margin-top: 15px;
@@ -179,6 +177,7 @@ cronometro,pontos, tentativas */
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-end;
+  
 }
 #name {
   margin-left: 2px;
@@ -214,21 +213,21 @@ cronometro,pontos, tentativas */
   perspective: 1000px;
   border: 1px solid black;
   border-radius: 10px;
-  padding: 16px;
+  padding: 12px;
   justify-content: space-evenly;
   background-color: rgb(11, 12, 12);
 }
 /* Cards do Game*/
 .card {
-  width: 60px;
-  height: 80px;
+  width: 77px;
+  height: 95px;
   margin: 2.5px;
   border-radius: 5px;
   cursor: pointer;
   transform: scale(1);
   transform-style: preserve-3d;
   transition: transform 0.9s;
-  background-color: rgba(14, 13, 13, 0.5);
+  
 }
 .card:active {
   transform: scale(0.99);
@@ -252,7 +251,7 @@ cronometro,pontos, tentativas */
   transform: rotateY(180deg);
 }
 
-@media (max-width: 379px) {
+@media (max-width: 500px) {
   .container {
     display: flex;
     flex-wrap: wrap;
@@ -262,14 +261,14 @@ cronometro,pontos, tentativas */
     padding: 7px;
     
   };
-  .info{
+  .box {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
+    padding: auto;
+    font-family: cursive;
+    border-radius: 10px;
+    border: 1px solid rgb(99, 96, 96);
+    background-color: rgb(14, 13, 13);
   }
-  .exit{
-  display: flex;
-    flex-direction:column-reverse;
-  }
+  
 }

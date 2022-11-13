@@ -4,10 +4,10 @@ var firstCard, secondCard;
 let blockBoard = false;
 
 // Vira as cartas
-
 function flipCards() {
   getInformations();
-  //this.classList.toggle('flip'); // adiciona e tira a classe
+   
+  //this.classList.toggle('flip'); // adiciona e remove a classe
   // função que vira as cartas após o click
   if (blockBoard) {
     return;
@@ -26,20 +26,27 @@ function flipCards() {
   hasFlippedCard = false;
   checkForMatch();
 }
-var nome = "";
+
+// pegar as informações do jogador //
+var nome;
+document.getElementById("name").innerText = "Jogador";
 function getInformations() {
-  if(!crom){
+  if ((clickFlip) && (!play || !crom)) {
     alert("Antes de começar o jogo é peciso adicionar seu nome!");
-     nome = prompt("Digite o seu nome para começar o jogo;", " Nome");
-   if(nome == null || nome == false){
-    unFlipCard();
-    disableCards();
-   }
+    nome = prompt("Digite o seu nome para começar o jogo;", " Nome");
+    if (nome == null || nome == false) {
+      unFlipCard();
+      disableCards();
+    }
     document.getElementById("name").innerText = nome;
-    return play();
+    play(); 
+    return;
+     
   }
   
+  
 }
+
 
 // Contatador de Tentativas
 var count = 0;
@@ -83,9 +90,9 @@ function checkForMatch() {
     total++;
     document.getElementById("punctuation").innerText = total;
     // Se virar todas as cartas
-    if (total == 1) {
+    if (total == 22) {
       pause();
-      
+      disableCards();
       congratulations(total);
       return;
     }
@@ -97,18 +104,17 @@ function checkForMatch() {
     unFlipCard();
   }
 }
-function congratulations(total){
-  alert(
-    " Total de PONTOS: " + total);
-    alert("Parabens, você concluiu a primera fase do GAME !");
-    let N = confirm("Você gostaria de começar o segunda fase do Game?");
-    if(N !== null && total >= 1){
-      nextFase( total);
-    }
+function congratulations(total) {
+  alert(" Total de PONTOS: " + total);
+  alert("Parabens, você concluiu a primera fase do GAME !");
+  let N = confirm("Você gostaria de começar o segunda fase do Game?");
+  if (N !== null && total >= 1) {
+    nextFase(total);
+  }
 }
-// Função que chama a próxima fase 
+// Função que chama a próxima fase
 function nextFase(total) {
-  if (total >= 1) {
+  if (total >= 22) {
     window.location.assign("../fase2/fase2.html");
   }
 }
@@ -134,21 +140,22 @@ function resetBoard() {
   });
 }) /* Ela está sendo chamada aqui ==> */();
 
-// Funcoes do Timer
+// Funcoes do Play
 var hh = 0;
 var mm = 0;
 var ss = 0;
 var tempo = 1000; // quanto miléssimos vale um minuto
 var crom;
 function play() {
-  
-  crom = setInterval(() => timer(), tempo);
-
+  return (crom = setInterval(() => timer(), tempo));
 }
+
+ 
 
 // Pause do jogo
 function pause() {
-  clearInterval(crom);
+    clearInterval(crom);
+   
 }
 
 //Stop do jogo
@@ -160,10 +167,9 @@ function stopp() {
   document.getElementById("punctuation").innerText = "0";
   document.getElementById("count").innerText = "0";
   document.getElementById("crono").innerText = "00:00:00";
-  if(crom == 0){
+  if (crom == 0) {
     unFlipCard();
     disableCards();
-    
   }
 }
 // Timer do jogo
@@ -188,10 +194,10 @@ function timer() {
   document.getElementById("crono").innerText = format;
 }
 document.getElementsById(".exit").onClick = exit();
-  function exit(){
-    let N = confirm("Deseja Sair da página?");
-    if(N){ 
-     return window.close();
-    }
-    return;
+function exit() {
+  let N = confirm("Deseja Sair da página?");
+  if (N) {
+    return window.close();
   }
+  return;
+}
