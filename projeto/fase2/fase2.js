@@ -8,19 +8,9 @@ var nome = "";
 function flipCards() {
   if (pauserd) {
     disableCards();
-
     return;
   }
-  if (!crom) {
-    alert("Antes de começar o jogo é peciso adicionar seu nome!");
-    nome = prompt("Digite o seu nome para começar o jogo;", " Nome");
-    if (nome == null || nome == false) {
-      return;
-    }
-    document.getElementById("name").innerText = nome;
-    start();
-    return;
-  }
+  getData();
   //this.classList.toggle('flip'); // adiciona e tira a classe
   // função que vira as cartas após o click
   if (blockBoard) {
@@ -42,6 +32,20 @@ function flipCards() {
   thirdCard = this;
   hasFlippedCard = false;
   checkForMatch();
+}
+
+// Pegando os dados do jogador antes de começar o jogo
+function getData(){
+  if (!crom) {
+    alert("Antes de começar o jogo é peciso adicionar seu nome!");
+    nome = prompt("Digite o seu nome para começar o jogo;", " Nome");
+    if (nome == null || nome == false) {
+      return;
+    }
+    document.getElementById("name").innerText = nome;
+    start();
+    return;
+  }
 }
 
 // Contatador de Tentativas
@@ -90,7 +94,7 @@ function checkForMatch() {
       pause();
       unFlipCard();
       alert("Parabens, você concluiu o jogo! Total de pontos: " + total);
-      if (total == 1 && clickFlip) {
+      if (total == 36 && clickFlip) {
         disableCards();
         confirmar = confirm("Deseja jogar novamente?");
         if (confirmar == !null || confirm.caller.length > 0) {
@@ -138,9 +142,9 @@ var ss = 0;
 var tempo = 1000; // quanto miléssimos vale um minuto
 var crom;
 function start() {
-  pauserd = false;
   if(crom !== 0){
-    getInformations();
+    pauserd = false;
+   
   crom = setInterval(() => timer(), tempo);
   }
   
